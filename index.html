@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -16,14 +15,14 @@
 </head>
 <body>
 <div id="lexcontainer">
-<p>Invoke the Lightning Component specified in the Script.</p>
+<p>test</p>
 </div>
-<script src="https://haporg--apmdev.sandbox.my.site.com/lightning/lightning.out.js"></script>  //(the highlighted one will change, or testing purpose we added Dev URL.)
+<script src="https://haporg--apmdev.sandbox.my.site.com/lightning/lightning.out.js"></script>  
 <script>
-    var Str1 = window.location.href;    // added this line for read web URL, because based on web URL in salesforce for assign work type to appointment
-   document.write(Str1 + "</br>" );
+    var Str1 = window.location.href;    
+  // document.write(Str1 + "</br>" );
     var inputVariables = [
-         { name : "inputVariables", type : "String", value: Str1 } // by using this line we are assigning the web URL to variable.
+         { name : "inputVariables", type : "String", value: Str1 } 
 
        ];
 $Lightning.use("runtime_appointmentbooking:lightningOutGuest",
@@ -33,13 +32,12 @@ $Lightning.use("runtime_appointmentbooking:lightningOutGuest",
             { },    // attributes to set on the component when created
             "lexcontainer",    // the DOM location to insert the component
             function(component) {            // API name of the Flow
-                component.startFlow("Inbound_New_Guest_Appointment_Custom",inputVariables); // calling the scheduler flow and passing URL value with inputVariables.
+                component.startFlow("Inbound_New_Guest_Appointment_Custom",inputVariables); 
             }
         );
-    },    'https://haporg--apmdev.sandbox.my.site.com/'  // this URL will change, for testing purpose we given dev URL.
+    },    'https://haporg--apmdev.sandbox.my.site.com/'  
 );
 </script>
 
 </body>
 </html>
-
